@@ -31,15 +31,11 @@ use simbol::multivp::*;
 fn main() {
     let mut routes: Vec<Route> = Vec::new();
     routes.push(Route {
-            id: String::from("build"), // How to identify this route
-            url_path: String::from("/build/*"), // What part of the URL will this route be used for
-            mount_path: String::from("/build/"), // Mount path
+            mount_path: String::from("/build/"), // Mount path, referring to which part of the URL it takes care of
             relative_path: String::from("build"), // The actual relative path to the content from your project's root directory
     });
     routes.push(Route {
-        id: String::from("assets"),
-        url_path: String::from("/assets/*"),
-        prefix: String::from("/assets/"),
+        mount_path: String::from("/assets/"),
         relative_path: String::from("assets"),
     });
     let server = SimbolServer::new(String::from("../"), 3000, routes);
@@ -61,8 +57,8 @@ This will create and run an HTTP server with the default roots to load:
 
 - `index.html` from `/index.html`
 - The different files in `/*`
-- Your assets, such as GLTF files, from `/assets/*`
-- Your built files, such as your JS and CSS, from `/build/*`
+- Your assets, such as GLTF files, from `/assets/`
+- Your built files, such as your JS and CSS, from `/build/`
 
 It will also create and run a WebSocket server for the multiVP (social) component of Simbol
 
