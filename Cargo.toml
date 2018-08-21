@@ -1,0 +1,25 @@
+[package]
+name = "simbol-server"
+version = "1.0.0"
+authors = ["Alberto Elias <hi@albertoelias.me>"]
+publish = true
+description = "Simple Web and WebSocket server, specially for sites that use Simbol"
+license = "MIT"
+keywords = ["Simbol", "server", "decentralized", "VR", "AR", "XR", "identity"]
+homepage = "https://simbol.io"
+repository = "https://github.com/simbol/simbol-server"
+documentation = "https://github.com/simbol/simbol-server"
+
+[dependencies]
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+router = "0.6"
+staticfile = "0.5"
+mount = "0.4"
+ws = "0.7.3"
+iron-cors = "0.8"
+
+[dependencies.iron]
+version = "0.6"
+features = ["native-tls-example"]
