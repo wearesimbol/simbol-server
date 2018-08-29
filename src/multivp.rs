@@ -124,21 +124,21 @@ impl Handler for Server {
 }
 
 pub struct MultiVP {
-    pub path: String,
+    pub address: String,
     pub port: u16,
 }
 
 impl MultiVP {
-    pub fn new(path: String, port: u16) -> MultiVP {
+    pub fn new(address: String, port: u16) -> MultiVP {
         MultiVP {
-            path: path,
+            address: address,
             port: port
         }
     }
 
     pub fn run_server(&self) {
         let connections = Connections::new(RefCell::new(Vec::with_capacity(10_000)));;
-        listen(format!("{}:{}", self.path, self.port), move |out| {
+        listen(format!("{}:{}", self.address, self.port), move |out| {
             Server {
                 ws: out,
                 connections: connections.clone()

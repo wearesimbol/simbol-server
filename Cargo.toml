@@ -1,6 +1,6 @@
 [package]
 name = "simbol-server"
-version = "1.0.0"
+version = "1.1.0"
 authors = ["Alberto Elias <hi@albertoelias.me>"]
 publish = true
 description = "Simple Web and WebSocket server, specially for sites that use Simbol"

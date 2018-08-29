@@ -1,10 +1,10 @@
 # Simbol server
 
-A simple HTTP and WebSocket server built on top of [Iron]() and [ws](). Easily get started with a Simbol app
+A simple HTTP and WebSocket server built on top of [Iron](https://github.com/iron/iron) and [ws](https://ws-rs.org/). Easily get started with a Simbol app
 
 ## Quick start
 
-In the root directory of you web project, create a server directory for the [Rust]() server:
+In the root directory of you web project, create a server directory for the [Rust](https://www.rust-lang.org) server:
 
 ```bash
 mkdir server
@@ -65,6 +65,10 @@ It will also create and run a WebSocket server for the multiVP (social) componen
 Then run it:
 
 `cargo run`
+
+## Contributing
+
+Check out the [Contribution guide](https://github.com/wearesimbol/simbol/blob/master/CONTRIBUTING.md)! If you have any questions, join our [community](http://spectrum.chat/simbol)
 
 ## License
 

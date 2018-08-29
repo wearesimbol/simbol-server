@@ -4,7 +4,6 @@ use std::path::Path;
 use iron;
 use iron::prelude::*;
 use iron::{Timeouts};
-use router::{Router};
 use mount::Mount;
 use staticfile::Static;
 use iron_cors::CorsMiddleware;
@@ -15,16 +14,18 @@ pub struct Route {
 }
 
 pub struct SimbolServer {
-	pub path: String,
+	pub address: String,
 	pub port: u16,
+	pub path: String,
 	pub routes: Vec<Route>,
 }
 
 impl SimbolServer {
-	pub fn new(path: String, port: u16, routes: Vec<Route>) -> SimbolServer {
+	pub fn new(address: String, port: u16, path: String, routes: Vec<Route>) -> SimbolServer {
 		SimbolServer {
-			path: path,
+			address: address,
 			port: port,
+			path: path,
 			routes: routes,
 		}
 	}
@@ -57,6 +58,6 @@ impl SimbolServer {
 			read: Some(Duration::from_secs(10)),
 			write: Some(Duration::from_secs(10))
 		};
-		iron.http(format!("localhost:{}", self.port)).unwrap()
+		iron.http(format!("{}:{}", self.address, self.port)).unwrap()
 	}
 }
